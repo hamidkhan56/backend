@@ -5,6 +5,7 @@ require('./config');
  const employes = require('./employes')
  const app = express();
  app.use(express.json());
+ require('dotenv').config()
 
 
  app.get('/', (req, res) => {
