@@ -15,8 +15,9 @@ res.send("welcome to my app")
  })
 
  app.post("/create", async(req,resp)=>{
-  let data =  new employes.insertMany(req.body)
-  let result =  await data.save();
+        const {data} = req.body
+  let data1 =  new employes(data)
+  let result =  await data1.save();
 
   console.log(result)
          resp.send(result);
