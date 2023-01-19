@@ -6,6 +6,13 @@ require('./config');
  const app = express();
  app.use(express.json());
 
+
+ app.get('/', (req, res) => {
+
+res.send("welcome to my app")
+  
+ })
+
  app.post("/create", async(req,resp)=>{
   let data =  new employes(req.body)
   let result =  await data.save();
