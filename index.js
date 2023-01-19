@@ -15,8 +15,10 @@ res.send("welcome to my app")
  })
 
  app.post("/create", async(req,resp)=>{
-        const {data} = req.body
-  let data1 =  new employes(data)
+        const {name, email, contact} = req.body
+  let data1 =  new employes({
+        name: name, email: email, contact: contact
+  })
   let result =  await data1.save();
 
   console.log(result)
